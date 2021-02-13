@@ -1,41 +1,16 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+import ClassComponent from "./components/ClassComponent";
+import FunctionalComponent from "./components/FunctionalComponent";
+import PureComponentExample from "./components/PureComponentExample";
+import CreateComponent from "./components/CreateComponent";
 
-class ClassComponent extends Component {
-  render() {
-    return <div>Class Component</div>;
-  }
-}
-
-function FunctionalComponent() {
-  return <div>Functional Component</div>;
-}
-
-const createComponent = () => {
-  let el = React.createElement(
-    "div",
-    { style: { color: "blue" } },
-    `Create component using 'React.createElement'`
-  );
-
-  ReactDOM.render(el, document.querySelector("#example"));
-};
-class PureComponentExample extends React.PureComponent {
-  render() {
-    return <div>Pure Component</div>;
-  }
-}
-const HelloMessage = () => {
-  return <div>Hello React!</div>;
-};
 function App() {
   return (
     <div className="App">
-      {createComponent()}
+      <CreateComponent />
       <ClassComponent />
       <PureComponentExample />
       <FunctionalComponent />
-      <HelloMessage />
     </div>
   );
 }
