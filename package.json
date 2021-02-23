@@ -1,38 +1,43 @@
 {
   "name": "task-1",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "jest": "^26.6.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.0.1"
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest src/tests/*.test.js",
+    "dev": "webpack serve",
+    "start": "webpack"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhanylTurtemirova/ReactJS-GMP-2021Q1-BY-PM1-.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhanylTurtemirova/ReactJS-GMP-2021Q1-BY-PM1-/issues"
+  },
+  "homepage": "https://github.com/ZhanylTurtemirova/ReactJS-GMP-2021Q1-BY-PM1-#readme",
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
     ]
   }
 }
