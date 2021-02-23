@@ -3,7 +3,7 @@ class MyComponent extends Component {
   render() {
     return (
       <div>
-        {process.env.NODE_ENV !== "production"
+        {process.env.NODE_ENV !== "prod"
           ? "Development mode"
           : "Production mode"}
       </div>
