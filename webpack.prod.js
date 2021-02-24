@@ -1,7 +1,3 @@
-module.exports = (env) => {
-  return require(`./webpack.${env}.js`);
-};
-
 module.exports = {
   entry: "./src/index.js",
   mode: "production",
