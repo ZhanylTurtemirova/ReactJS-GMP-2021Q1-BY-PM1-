@@ -1,11 +1,10 @@
-const path = require("path");
 module.exports = (env) => {
   return require(`./webpack.${env}.js`);
 };
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "prod",
+  mode: "production",
   output: {
     filename: "./main.js",
   },

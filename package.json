@@ -24,8 +24,8 @@
   },
   "scripts": {
     "test": "jest src/tests/*.test.js",
-    "dev": "webpack --env dev serve",
-    "prod": "webpack --env prod serve",
+    "dev": "webpack serve --env dev --open",
+    "prod": "webpack --env prod",
     "start": "webpack"
   },
   "repository": {
