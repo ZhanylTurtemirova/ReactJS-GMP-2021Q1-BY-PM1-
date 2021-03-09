@@ -62,6 +62,7 @@ export const SearchButton = styled.div`
   border-radius: 4px;
   padding: 15px 30px;
   font-weight: 300;
+  cursor: pointer;
 `;
 export const SearchBannerTop = styled.div`
   width: 90%;

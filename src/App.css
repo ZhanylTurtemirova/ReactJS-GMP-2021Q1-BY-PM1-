@@ -8,6 +8,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: var(--secondaryGrey) !important;
+  background: var(--mainDark) !important;
   color: var(--mainWhite) !important;
+  font-size: 18px;
 }
