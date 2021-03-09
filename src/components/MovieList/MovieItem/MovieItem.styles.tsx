@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MovieWrapper = styled.span`
   width: 300px;
+  margin-bottom: 20px;
 `;
 export const MoviePoster = styled.img`
   width: 300px;

@@ -23,7 +23,7 @@ export const SortMenu: FC = (): ReactElement => {
     "crime",
   ];
   const sortItems: string[] = ["realise date", "rating"];
-  const [activeItem, setActiveItem] = useState<string>(menuItems[0]);
+  const [activeItem, setActiveItem] = useState<string>("all");
   const [sortedOption, setSortedOption] = useState<string>(sortItems[0]);
   const [count, setCount] = useState<number>(0);
   const [isShowed, setIsShowed] = useState<boolean>(false);
@@ -37,7 +37,7 @@ export const SortMenu: FC = (): ReactElement => {
           <Menu>
             {menuItems.map((item, index) => (
               <MenuItem
-                isActive={item === activeItem ? true : false}
+                isActive={Boolean(item === activeItem)}
                 onClick={() => setActiveItem(item)}
               >
                 {item}
@@ -49,7 +49,6 @@ export const SortMenu: FC = (): ReactElement => {
             <SortItem
               onClick={() => {
                 console.log(">>>", isShowed);
-
                 setIsShowed(!isShowed);
               }}
             >

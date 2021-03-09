@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Menu = styled.div`
   display: flex;
 `;
+
 export const SortTitle = styled.div`
   text-transform: uppercase;
   margin-right: 20px;
 `;
+
 export const SortDropdown = styled.div<{ isShowed: boolean }>`
   text-transform: uppercase;
   display: ${(isShowed) => {
@@ -21,29 +23,33 @@ export const SortDropdown = styled.div<{ isShowed: boolean }>`
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 `;
+
 export const SortWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
 `;
+
 export const SortMenuWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  border-bottom: 3px ridge var(--secondaryGrey);
+  padding-bottom: -3px;
 `;
+
 export const MenuItem = styled.div<{ isActive: boolean }>`
   text-transform: uppercase;
   margin-right: 10px;
   padding: 10px 0;
   border-bottom: ${(isActive) =>
-    isActive ? "3px ridge var(--mainRed)" : "3px ridge var(--secondaryGrey)"};
+    !isActive ? "none" : "3px ridge var(--mainRed)"};
 `;
 
 export const SortItem = styled.div`
   text-transform: uppercase;
   padding-bottom: 10px;
-  padding-top: 15px;
+  padding-top: 12px;
   margin-right: 5px;
-  border-bottom: 5px ridge var(--secondaryGrey);
 `;
 
 export const ResultWrapper = styled.div`
@@ -70,7 +76,8 @@ export const TriangleButton = styled.div`
 export const StyledBg = styled.div`
   background: var(--mainDark);
 `;
+
 export const Wrapper = styled.div`
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
 `;
