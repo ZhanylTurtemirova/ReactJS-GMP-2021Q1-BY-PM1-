@@ -29,6 +29,7 @@ export const AddButton = styled.div`
   font-size: 20px;
   font-weight: 500;
   color: var(--mainRed);
+  cursor: pointer;
 `;
 export const SearchContent = styled.div`
   width: 1000px;
