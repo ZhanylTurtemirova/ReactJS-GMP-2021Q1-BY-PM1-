@@ -27,6 +27,7 @@ export const SelectWrapper = styled.div`
   flex-direction: column;
   margin-bottom: 40px;
 `;
+
 export const StyledSelect = styled.select`
   font-size: 16px;
   font-family: inherit;
@@ -40,6 +41,7 @@ export const StyledSelect = styled.select`
   }
   color: var(--mainWhite);
 `;
+
 export const StyledOption = styled.option`
   font-size: 16px;
   font-family: inherit;
@@ -53,6 +55,7 @@ export const StyledOption = styled.option`
   }
   color: var(--mainWhite);
 `;
+
 export const StyledLabel = styled.label`
   color: var(--mainRed);
   font-weight: 700;

@@ -1,26 +1,36 @@
 import React, { ReactElement, FC, useState } from "react";
-import { StyledForm, ButtonsWrapper } from "./AddMovie.styles";
+import { StyledForm, ButtonsWrapper } from "./EditMovie.styles";
 import Input from "../Input";
 import Button from "../Button";
 import Select from "../Select";
 import Modal from "../Modal";
 
-type AddMovieProps = {
+type EditMovieProps = {
+  movie: {
+    id: string;
+    movieTitle: string;
+    releaseDate: string;
+    movieUrl: string;
+    genre: string;
+    overview: string;
+    runTime: string;
+  };
   onClose: () => void;
   isShowed: boolean;
 };
 
 const Options: string[] = ["Action", "Adventure", "Horror"];
-export const AddMovie: FC<AddMovieProps> = ({
+export const EditMovie: FC<EditMovieProps> = ({
   onClose: handleClose,
   isShowed,
+  movie,
 }): ReactElement => {
-  const [movieTitle, setTitle] = useState<string>("");
-  const [releaseDate, setReleaseDate] = useState<string>("");
-  const [movieUrl, setMovieUrl] = useState<string>("");
-  const [genre, setGenre] = useState<string>("");
-  const [overview, setOverview] = useState<string>("");
-  const [runTime, setRuntime] = useState<string>("");
+  const [movieTitle, setTitle] = useState<string>(movie.movieTitle);
+  const [releaseDate, setReleaseDate] = useState<string>(movie.releaseDate);
+  const [movieUrl, setMovieUrl] = useState<string>(movie.movieUrl);
+  const [genre, setGenre] = useState<string>(movie.genre);
+  const [overview, setOverview] = useState<string>(movie.overview);
+  const [runTime, setRuntime] = useState<string>(movie.runTime);
   return (
     <Modal isHidden={isShowed} onClose={handleClose} title="Add Movie">
       <StyledForm>
@@ -61,14 +71,14 @@ export const AddMovie: FC<AddMovieProps> = ({
         />
         <Input
           label="Runtime"
-          type="string"
+          type="number"
           value={runTime}
           onChange={(e) => setRuntime(e.target.value)}
           placeholder={"Runtime here"}
         />
         <ButtonsWrapper>
           <Button text="Reset" />
-          <Button isFilled text="Submit" />
+          <Button isFilled text="Save Changes" />
         </ButtonsWrapper>
       </StyledForm>
     </Modal>

@@ -6,49 +6,49 @@ import posterImg from "../../assets/pulp-fiction.jpg";
 export const MovieList: FC = (): ReactElement => {
   const movieList: {
     id: number;
-    title: string;
+    movieTitle: string;
     date: number;
     genre: string[];
     url: string;
   }[] = [
     {
       id: 0,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
     },
     {
       id: 1,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
     },
     {
       id: 2,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
     },
     {
       id: 3,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
     },
     {
       id: 4,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
     },
     {
       id: 5,
-      title: "PulpFiction",
+      movieTitle: "PulpFiction",
       date: 2004,
       genre: ["Action", "Adventure"],
       url: posterImg,
@@ -59,7 +59,7 @@ export const MovieList: FC = (): ReactElement => {
       {movieList.map((item) => (
         <MovieItem
           key={item.id}
-          title={item.title}
+          movieTitle={item.movieTitle}
           date={item.date}
           genre={item.genre}
           img={item.url}

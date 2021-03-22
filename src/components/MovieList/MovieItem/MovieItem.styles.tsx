@@ -1,8 +1,28 @@
 import styled from "styled-components";
 
+export const MovieMenuWrapper = styled.div`
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--mainWhite);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+`;
 export const MovieWrapper = styled.span`
   width: 300px;
   margin-bottom: 20px;
+  position: relative;
+  ${MovieMenuWrapper} {
+    display: none;
+  }
+  &:hover ${MovieMenuWrapper} {
+    display: flex;
+  }
 `;
 export const MoviePoster = styled.img`
   width: 300px;
@@ -37,4 +57,33 @@ export const MovieDate = styled.div`
     border: 2px solid var(--secondaryGrey);
     border-radius: 4px;
   }
+`;
+
+export const MovieMenu = styled.div`
+  position: relative;
+`;
+
+export const MovieMenuIcon = styled.img`
+  width: 32px;
+  height: 32px;
+`;
+
+export const MenuItem = styled.span`
+  cursor: pointer;
+  padding: 15px 25px;
+  color: var(--mainWhite);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--mainRed);
+  }
+`;
+export const MenuItems = styled.div<{ isMenuShown: boolean }>`
+  position: absolute;
+  right: 0px;
+  top: 50px;
+  display: ${(isMenuShown) => (isMenuShown ? "flex" : "none")};
+  flex-direction: column;
+  background: var(--mainGrey);
+  border-radius: 4px;
 `;
