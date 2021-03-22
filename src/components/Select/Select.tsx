@@ -6,12 +6,12 @@ import {
   StyledOption,
 } from "./Select.styles";
 
-interface InputInterface extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SelectInterface extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   name: string;
   options: string[];
 }
-export const Select: FC<InputInterface> = ({
+export const Select: FC<SelectInterface> = ({
   label,
   name,
   options,

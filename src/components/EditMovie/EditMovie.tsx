@@ -32,7 +32,7 @@ export const EditMovie: FC<EditMovieProps> = ({
   const [overview, setOverview] = useState<string>(movie.overview);
   const [runTime, setRuntime] = useState<string>(movie.runTime);
   return (
-    <Modal isHidden={isShowed} onClose={handleClose} title="Add Movie">
+    <Modal isHidden={isShowed} onClose={handleClose} title="Edit Movie">
       <StyledForm>
         <Input
           label="title"
