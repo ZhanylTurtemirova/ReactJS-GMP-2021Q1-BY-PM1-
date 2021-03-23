@@ -18,7 +18,7 @@ import {
   BgWrapper,
   MovieContent,
 } from "./MovieDetail.styles";
-import searchImg from "../../../assets/search.png";
+import searchImg from "../../assets/search.png";
 import Logo from "../Logo";
 
 interface MovieDetailInterface {
@@ -55,7 +55,7 @@ export default class MovieDetail extends React.Component<MovieDetailInterface> {
         <MovieContent>
           <TopWrapper>
             <Logo />
-            <SearchWrapper to="/">
+            <SearchWrapper>
               <SearchIcon src={searchImg} />
             </SearchWrapper>
           </TopWrapper>

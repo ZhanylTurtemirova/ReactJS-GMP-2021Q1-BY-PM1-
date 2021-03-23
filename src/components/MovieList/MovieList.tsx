@@ -5,7 +5,6 @@ import posterImg from "../../assets/pulp-fiction.jpg";
 import lordOfTheRingsImg from "../../assets/lordOfTheRings.jpg";
 import fightClubImg from "../../assets/fightClub.jpg";
 import samsaraImg from "../../assets/samsara.jpeg";
-import { FileWatcherEventKind } from "typescript";
 
 interface MovieListProps {
   filterBy?: string;
