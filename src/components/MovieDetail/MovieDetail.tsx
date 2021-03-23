@@ -18,7 +18,7 @@ import {
   BgWrapper,
   MovieContent,
 } from "./MovieDetail.styles";
-import searchImg from "../../assets/search.png";
+import searchImg from "../../assets/red-search.webp";
 import Logo from "../Logo";
 
 interface MovieDetailInterface {

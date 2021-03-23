@@ -26,8 +26,9 @@ const movieList: {
     genre: ["Crime"],
     imgUrl: posterImg,
     movieUrl: "movieUrl",
-    overview: "overview",
-    runTime: "runTime",
+    overview:
+      "Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town.",
+    runTime: "154 min",
   },
   {
     id: "1",

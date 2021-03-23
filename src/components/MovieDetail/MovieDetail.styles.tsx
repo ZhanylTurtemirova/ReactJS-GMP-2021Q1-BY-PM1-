@@ -5,7 +5,7 @@ export const Wrapper = styled.div``;
 export const BgWrapper = styled.div`
   background-image: url(${BgPoster});
   width: 100%;
-  height: 50vh;
+  height: 65vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,8 +21,7 @@ export const MovieContent = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  max-height: 800px;
+  height: 65vh;
   z-index: 2;
 `;
 
@@ -38,20 +37,21 @@ export const SearchWrapper = styled.div`
 `;
 
 export const SearchIcon = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 `;
 
 export const MovieWrapper = styled.span`
-  width: 100%;
+  width: 90%;
+  margin: 30px auto;
   display: flex;
-  justify-content: space-between;
 `;
 
 export const MoviePoster = styled.img`
-  width: 300px;
-  height: 450px;
+  width: 200px;
+  height: 300px;
   object-fit: cover;
+  margin-right: 50px;
 `;
 
 export const MovieDescription = styled.div`
@@ -59,30 +59,33 @@ export const MovieDescription = styled.div`
   flex-direction: column;
 `;
 
-export const MovieTilte = styled.span`
+export const MovieTilte = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  font-weight: 500;
 `;
 
 export const Title = styled.span`
-  font-size: 32px;
+  font-size: 48px;
   padding-bottom: 10px;
   color: var(--mainWhite);
+  margin-right: 20px;
 `;
 
 export const Rate = styled.div`
-  border: 50%;
-  padding: 25px;
-  border: 2px solid var(--mainWhite);
+  border-radius: 50%;
+  padding: 16px 25px;
+  border: 1px solid var(--mainWhite);
   text-align: center;
+  color: green;
+  font-size: 24px;
 `;
 
 export const MovieSubtitle = styled.span`
   font-size: 16px;
   padding-bottom: 10px;
   color: var(--mainWhite);
+  font-weight: 300;
 `;
 
 export const MovieDateTime = styled.div`
@@ -97,4 +100,7 @@ export const Date = styled.div`
 `;
 
 export const Time = styled.div``;
-export const MovieOverview = styled.div``;
+export const MovieOverview = styled.div`
+  font-weight: 500;
+  max-width: 700px;
+`;
