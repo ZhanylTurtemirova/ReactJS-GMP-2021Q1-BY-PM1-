@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes, { string } from "prop-types";
 import {
   MovieWrapper,
   MoviePoster,
@@ -21,22 +20,16 @@ import DeleteMovie from "../../DeleteMovie";
 interface MovieItemInterface {
   movie: {
     id: string;
-    img: string;
     movieUrl: string;
     overview: string;
     runTime: string;
     movieTitle: string;
     genre: string[];
     releaseDate: string;
+    imgUrl: string;
   };
 }
 export default class MovieItem extends React.Component<MovieItemInterface> {
-  static propTypes: {
-    img: PropTypes.Requireable<string>;
-    movieTitle: PropTypes.Requireable<string>;
-    genre: PropTypes.Requireable<(string | null | undefined)[]>;
-    releaseDate: PropTypes.Requireable<number>;
-  };
   state = {
     isMenuShown: false,
     isEditShown: false,
@@ -45,7 +38,7 @@ export default class MovieItem extends React.Component<MovieItemInterface> {
   render(): React.ReactElement {
     const {
       movie,
-      movie: { img, movieTitle, genre, releaseDate },
+      movie: { imgUrl, movieTitle, genre, releaseDate },
     } = this.props;
     const { isMenuShown, isEditShown, isDeleteShown } = this.state;
     return (
@@ -66,7 +59,7 @@ export default class MovieItem extends React.Component<MovieItemInterface> {
               </MenuItems>
             </MovieMenu>
           </MovieMenuWrapper>
-          <MoviePoster src={img} />
+          <MoviePoster src={imgUrl} />
           <MovieDescription>
             <MovieTilte>
               <Title>{movieTitle}</Title>
@@ -99,11 +92,3 @@ export default class MovieItem extends React.Component<MovieItemInterface> {
     );
   }
 }
-
-// @ts-ignore
-MovieItem.propTypes = {
-  img: PropTypes.string,
-  movieTitle: PropTypes.string,
-  genre: PropTypes.arrayOf(string),
-  releaseDate: PropTypes.number,
-};

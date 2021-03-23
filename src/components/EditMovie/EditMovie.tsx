@@ -71,7 +71,7 @@ export const EditMovie: FC<EditMovieProps> = ({
         />
         <Input
           label="Runtime"
-          type="number"
+          type="string"
           value={runTime}
           onChange={(e) => setRuntime(e.target.value)}
           placeholder={"Runtime here"}

@@ -7,7 +7,7 @@ export const MovieMenuWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--mainWhite);
+  background: var(--secondaryGrey);
   position: absolute;
   top: 5px;
   right: 5px;

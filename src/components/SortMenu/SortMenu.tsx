@@ -14,12 +14,17 @@ import {
   TriangleButtonWrapper,
 } from "./styles/SortMenu.styles";
 
-export const SortMenu: FC = (): ReactElement => {
+interface SortMenuProps {
+  activeClickProps: (item: string) => void;
+}
+export const SortMenu: FC<SortMenuProps> = ({
+  activeClickProps,
+}): ReactElement => {
   const menuItems: string[] = [
     "all",
     "documentary",
-    "comedy",
-    "horror",
+    "action",
+    "adventure",
     "crime",
   ];
   const sortItems: string[] = ["realise date", "rating"];
@@ -27,8 +32,11 @@ export const SortMenu: FC = (): ReactElement => {
   const [sortedOption, setSortedOption] = useState<string>(sortItems[0]);
   const [count, setCount] = useState<number>(0);
   const [isShowed, setIsShowed] = useState<boolean>(false);
-
-  useEffect(() => {}, [isShowed]);
+  const activeClickHandler = (item: string) => {
+    activeClickProps(item);
+    setActiveItem(item);
+  };
+  useEffect(() => {}, [isShowed, activeItem]);
 
   return (
     <StyledBg>
@@ -37,8 +45,10 @@ export const SortMenu: FC = (): ReactElement => {
           <Menu>
             {menuItems.map((item, index) => (
               <MenuItem
-                isActive={Boolean(item === activeItem)}
-                onClick={() => setActiveItem(item)}
+                onClick={() => {
+                  activeClickHandler(item);
+                }}
+                isActive={false}
               >
                 {item}
               </MenuItem>
@@ -48,7 +58,6 @@ export const SortMenu: FC = (): ReactElement => {
             <SortTitle>Sort By</SortTitle>
             <SortItem
               onClick={() => {
-                console.log(">>>", isShowed);
                 setIsShowed(!isShowed);
               }}
             >
@@ -56,7 +65,6 @@ export const SortMenu: FC = (): ReactElement => {
             </SortItem>
             <TriangleButtonWrapper
               onClick={() => {
-                console.log(">>>", isShowed);
                 setIsShowed(!isShowed);
               }}
             >

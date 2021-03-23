@@ -8,6 +8,7 @@ export const StyledTitle = styled.div`
   color: var(--mainWhite);
 `;
 export const ButtonsWrapper = styled.div`
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 `;

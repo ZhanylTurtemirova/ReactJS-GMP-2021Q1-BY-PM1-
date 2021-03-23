@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Menu = styled.div`
   display: flex;
@@ -7,6 +7,7 @@ export const Menu = styled.div`
 export const SortTitle = styled.div`
   text-transform: uppercase;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const SortDropdown = styled.div<{ isShowed: boolean }>`
@@ -39,10 +40,12 @@ export const SortMenuWrapper = styled.div`
 
 export const MenuItem = styled.div<{ isActive: boolean }>`
   text-transform: uppercase;
+  cursor: pointer;
   margin-right: 10px;
   padding: 10px 0;
-  border-bottom: ${(isActive) =>
-    !isActive ? "none" : "3px ridge var(--mainRed)"};
+  &:hover {
+    border-bottom: 3px ridge var(--mainRed);
+  }
 `;
 
 export const SortItem = styled.div`
@@ -50,6 +53,7 @@ export const SortItem = styled.div`
   padding-bottom: 10px;
   padding-top: 12px;
   margin-right: 5px;
+  cursor: pointer;
 `;
 
 export const ResultWrapper = styled.div`
