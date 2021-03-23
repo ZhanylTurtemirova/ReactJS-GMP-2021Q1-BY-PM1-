@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import {
   MovieWrapper,
   MoviePoster,
@@ -35,46 +35,45 @@ interface MovieDetailInterface {
     subtitle?: string;
   };
 }
-export default class MovieDetail extends React.Component<MovieDetailInterface> {
-  render(): React.ReactElement {
-    const {
-      movie,
-      movie: {
-        imgUrl,
-        rate = "4",
-        subtitle = "Oscar winning movie",
-        movieTitle,
-        runTime,
-        overview,
-        releaseDate,
-      },
-    } = this.props;
-    return (
-      <Wrapper>
-        <BgWrapper />
-        <MovieContent>
-          <TopWrapper>
-            <Logo />
-            <SearchWrapper>
-              <SearchIcon src={searchImg} />
-            </SearchWrapper>
-          </TopWrapper>
-          <MovieWrapper>
-            <MoviePoster src={imgUrl} />
-            <MovieDescription>
-              <MovieTilte>
-                <Title>{movieTitle}</Title>
-                <Rate>{rate}</Rate>
-              </MovieTilte>
-              <MovieSubtitle>{subtitle}</MovieSubtitle>
-              <MovieDateTime>
-                <Date>{releaseDate}</Date> <Time>{runTime}</Time>
-              </MovieDateTime>
-              <MovieOverview>{overview}</MovieOverview>
-            </MovieDescription>
-          </MovieWrapper>
-        </MovieContent>
-      </Wrapper>
-    );
-  }
-}
+
+const MovieDetail: FC<React.PropsWithChildren<MovieDetailInterface>> = ({
+  movie,
+  movie: {
+    imgUrl,
+    rate = "4",
+    subtitle = "Oscar winning movie",
+    movieTitle,
+    runTime,
+    overview,
+    releaseDate,
+  },
+}): ReactElement => {
+  return (
+    <Wrapper>
+      <BgWrapper />
+      <MovieContent>
+        <TopWrapper>
+          <Logo />
+          <SearchWrapper>
+            <SearchIcon src={searchImg} />
+          </SearchWrapper>
+        </TopWrapper>
+        <MovieWrapper>
+          <MoviePoster src={imgUrl} />
+          <MovieDescription>
+            <MovieTilte>
+              <Title>{movieTitle}</Title>
+              <Rate>{rate}</Rate>
+            </MovieTilte>
+            <MovieSubtitle>{subtitle}</MovieSubtitle>
+            <MovieDateTime>
+              <Date>{releaseDate}</Date> <Time>{runTime}</Time>
+            </MovieDateTime>
+            <MovieOverview>{overview}</MovieOverview>
+          </MovieDescription>
+        </MovieWrapper>
+      </MovieContent>
+    </Wrapper>
+  );
+};
+export default MovieDetail;

@@ -15,7 +15,7 @@ export const BgWrapper = styled.div`
 
 export const MovieContent = styled.div`
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   position: absolute;
   top: 0;

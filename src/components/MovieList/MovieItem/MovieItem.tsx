@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, ReactElement, useState } from "react";
 import {
   MovieWrapper,
   MoviePoster,
@@ -29,66 +29,53 @@ interface MovieItemInterface {
     imgUrl: string;
   };
 }
-export default class MovieItem extends React.Component<MovieItemInterface> {
-  state = {
-    isMenuShown: false,
-    isEditShown: false,
-    isDeleteShown: false,
-  };
-  render(): React.ReactElement {
-    const {
-      movie,
-      movie: { imgUrl, movieTitle, genre, releaseDate },
-    } = this.props;
-    const { isMenuShown, isEditShown, isDeleteShown } = this.state;
-    return (
-      <>
-        <MovieWrapper>
-          <MovieMenuWrapper>
-            <MovieMenu onClick={() => this.setState({ isMenuShown: true })}>
-              <MovieMenuIcon src={menuImg} />
-              <MenuItems isMenuShown={isMenuShown}>
-                <MenuItem onClick={() => this.setState({ isEditShown: true })}>
-                  Edit
-                </MenuItem>
-                <MenuItem
-                  onClick={() => this.setState({ isDeleteShown: true })}
-                >
-                  Delete
-                </MenuItem>
-              </MenuItems>
-            </MovieMenu>
-          </MovieMenuWrapper>
-          <MoviePoster src={imgUrl} />
-          <MovieDescription>
-            <MovieTilte>
-              <Title>{movieTitle}</Title>
-              <Genre>{genre.join(" & ")}</Genre>
-            </MovieTilte>
-            <MovieDate>
-              <span>{releaseDate}</span>
-            </MovieDate>
-          </MovieDescription>
-        </MovieWrapper>
-        {isDeleteShown && (
-          <DeleteMovie
-            isShowed={isDeleteShown}
-            movieId={movie.id}
-            onClose={() => {
-              this.setState({ isDeleteShown: false });
-            }}
-          />
-        )}
-        {isEditShown && (
-          <EditMovie
-            isShowed={isEditShown}
-            movie={{ ...movie, genre: genre.join(" & ") }}
-            onClose={() => {
-              this.setState({ isEditShown: false });
-            }}
-          />
-        )}
-      </>
-    );
-  }
-}
+
+const MovieItem: FC<React.PropsWithChildren<MovieItemInterface>> = ({
+  movie,
+  movie: { imgUrl, movieTitle, genre, releaseDate },
+}): ReactElement => {
+  const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
+  const [isEditShown, setIsEditShown] = useState<boolean>(false);
+  const [isDeleteShown, setIsDeleteShown] = useState<boolean>(false);
+
+  return (
+    <>
+      <MovieWrapper>
+        <MovieMenuWrapper>
+          <MovieMenu onClick={() => setIsMenuShown(true)}>
+            <MovieMenuIcon src={menuImg} />
+            <MenuItems isMenuShown={isMenuShown}>
+              <MenuItem onClick={() => setIsEditShown(true)}>Edit</MenuItem>
+              <MenuItem onClick={() => setIsDeleteShown(true)}>Delete</MenuItem>
+            </MenuItems>
+          </MovieMenu>
+        </MovieMenuWrapper>
+        <MoviePoster src={imgUrl} />
+        <MovieDescription>
+          <MovieTilte>
+            <Title>{movieTitle}</Title>
+            <Genre>{genre.join(" & ")}</Genre>
+          </MovieTilte>
+          <MovieDate>
+            <span>{releaseDate}</span>
+          </MovieDate>
+        </MovieDescription>
+      </MovieWrapper>
+      {isDeleteShown && (
+        <DeleteMovie
+          isShowed={isDeleteShown}
+          movieId={movie.id}
+          onClose={() => setIsDeleteShown(false)}
+        />
+      )}
+      {isEditShown && (
+        <EditMovie
+          isShowed={isEditShown}
+          movie={{ ...movie, genre: genre.join(" & ") }}
+          onClose={() => setIsEditShown(false)}
+        />
+      )}
+    </>
+  );
+};
+export default MovieItem;
