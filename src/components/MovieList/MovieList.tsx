@@ -96,7 +96,7 @@ export const MovieList: FC<MovieListProps> = ({ filterBy }): ReactElement => {
       }
     });
     return setMovies(moviesFiltered);
-  }, [filterBy, movieList]);
+  }, [filterBy]);
   return (
     <ListWrapper>
       {movies && movies.map((item) => <MovieItem key={item.id} movie={item} />)}
